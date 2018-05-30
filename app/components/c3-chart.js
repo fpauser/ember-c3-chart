@@ -1,0 +1,1 @@
+export { default } from 'ember-c3-chart/components/c3-chart';
