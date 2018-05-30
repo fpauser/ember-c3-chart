@@ -93,7 +93,7 @@ export default Component.extend({
 
   willDestroyElement() {
     // execute teardown method
-    this._super();
-    get(this, 'c3chart').destroy();
+    this._super(...arguments);
+    this.c3chart && this.c3chart.destroy();
   }
 });

@@ -3,24 +3,35 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
+const SAMPLE_DATA = {
+  axis: {
+    x: { label: "histname" },
+    y: { label: "Count" }
+  },
+  data: {
+    bar: {
+      width: {
+        ratio: 0.7
+      }
+    },
+    colors: {},
+    columns: [
+      ["Category 0", 0],
+      ["Category 1", 1],
+      ["Category 2", 2]
+    ]
+  }
+};
+
+
 module('Integration | Component | c3-chart', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+     this.set('axis', SAMPLE_DATA.axis);
+     this.set('data', SAMPLE_DATA.data);
 
-    await render(hbs`{{c3-chart}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#c3-chart}}
-        template block text
-      {{/c3-chart}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    await render(hbs`{{c3-chart axis=axis data=data}}`);
+    assert.ok(this.element.querySelector('svg'), 'svg rendered');
   });
 });

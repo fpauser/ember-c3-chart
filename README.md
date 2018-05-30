@@ -1,7 +1,7 @@
 ember-c3-chart
 ==============================================================================
 
-[Short description of the addon.]
+Updated c3-chart component for ember 3.1.x that uses ember-d3, d3@v5 & c3.
 
 Installation
 ------------------------------------------------------------------------------
