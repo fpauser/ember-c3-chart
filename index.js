@@ -6,10 +6,9 @@ module.exports = {
   included(app) {
     this._super.included.apply(this, arguments);
 
-    // bundle d3
-    let options = app.options['ember-d3'] || {};
-    options.bundle = true;
-    app.options['ember-d3'] = options;
+    // import d3
+    app.import('node_modules/d3/dist/d3.min.js');
+    app.import('vendor/shims/d3.js');
 
     // import c3
     app.import('node_modules/c3/c3.js');

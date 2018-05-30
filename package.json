@@ -1,6 +1,6 @@
 {
   "name": "ember-c3-chart",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "C3-chart component for ember.js.",
   "keywords": [
     "ember-addon"
